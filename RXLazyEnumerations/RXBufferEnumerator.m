@@ -24,7 +24,7 @@
 		
 		dispatch_io_read(_channel, 0, SIZE_MAX, _readQueue, ^(bool done, dispatch_data_t data, int error) {
 			dispatch_data_apply(data, ^bool(dispatch_data_t region, size_t offset, const void *buffer, size_t size) {
-				NSString *chunk = [[NSString alloc] initWithBytes:buffer length:size encoding:NSUTF8StringEncoding];
+				NSString *chunk = [[NSString alloc] initWithBytesNoCopy:(void *)buffer length:size encoding:NSUTF8StringEncoding freeWhenDone:NO];
 				
 				[_contents appendString:chunk];
 				
