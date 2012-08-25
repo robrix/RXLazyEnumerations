@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D429C4FB15E8A015002F9A4C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D429C4FA15E8A015002F9A4C /* Cocoa.framework */; };
-		D429C50515E8A015002F9A4C /* RXLazyEnumerations.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C50415E8A015002F9A4C /* RXLazyEnumerations.m */; };
 		D429C50D15E8A015002F9A4C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D429C50C15E8A015002F9A4C /* SenTestingKit.framework */; };
 		D429C50E15E8A015002F9A4C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D429C4FA15E8A015002F9A4C /* Cocoa.framework */; };
 		D429C51115E8A015002F9A4C /* libRXLazyEnumerations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D429C4F715E8A015002F9A4C /* libRXLazyEnumerations.a */; };
 		D429C51715E8A015002F9A4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D429C51515E8A015002F9A4C /* InfoPlist.strings */; };
-		D429C51A15E8A015002F9A4C /* RXLazyEnumerationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C51915E8A015002F9A4C /* RXLazyEnumerationsTests.m */; };
+		D429C52515E8A167002F9A4C /* RXBlockEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = D429C52315E8A167002F9A4C /* RXBlockEnumerator.h */; };
+		D429C52615E8A167002F9A4C /* RXBlockEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C52415E8A167002F9A4C /* RXBlockEnumerator.m */; };
+		D429C52D15E8AAD3002F9A4C /* RXBufferEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = D429C52B15E8AAD3002F9A4C /* RXBufferEnumerator.h */; };
+		D429C52E15E8AAD3002F9A4C /* RXBufferEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C52C15E8AAD3002F9A4C /* RXBufferEnumerator.m */; };
+		D429C53015E8B279002F9A4C /* RXBufferEnumeratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C52F15E8B279002F9A4C /* RXBufferEnumeratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +37,15 @@
 		D429C4FF15E8A015002F9A4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D429C50215E8A015002F9A4C /* RXLazyEnumerations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RXLazyEnumerations-Prefix.pch"; sourceTree = "<group>"; };
 		D429C50315E8A015002F9A4C /* RXLazyEnumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXLazyEnumerations.h; sourceTree = "<group>"; };
-		D429C50415E8A015002F9A4C /* RXLazyEnumerations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXLazyEnumerations.m; sourceTree = "<group>"; };
 		D429C50B15E8A015002F9A4C /* RXLazyEnumerationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RXLazyEnumerationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429C50C15E8A015002F9A4C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D429C51415E8A015002F9A4C /* RXLazyEnumerationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RXLazyEnumerationsTests-Info.plist"; sourceTree = "<group>"; };
 		D429C51615E8A015002F9A4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D429C51815E8A015002F9A4C /* RXLazyEnumerationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXLazyEnumerationsTests.h; sourceTree = "<group>"; };
-		D429C51915E8A015002F9A4C /* RXLazyEnumerationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXLazyEnumerationsTests.m; sourceTree = "<group>"; };
+		D429C52315E8A167002F9A4C /* RXBlockEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXBlockEnumerator.h; sourceTree = "<group>"; };
+		D429C52415E8A167002F9A4C /* RXBlockEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXBlockEnumerator.m; sourceTree = "<group>"; };
+		D429C52B15E8AAD3002F9A4C /* RXBufferEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXBufferEnumerator.h; sourceTree = "<group>"; };
+		D429C52C15E8AAD3002F9A4C /* RXBufferEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXBufferEnumerator.m; sourceTree = "<group>"; };
+		D429C52F15E8B279002F9A4C /* RXBufferEnumeratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXBufferEnumeratorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +112,11 @@
 		D429C50015E8A015002F9A4C /* RXLazyEnumerations */ = {
 			isa = PBXGroup;
 			children = (
+				D429C52315E8A167002F9A4C /* RXBlockEnumerator.h */,
+				D429C52415E8A167002F9A4C /* RXBlockEnumerator.m */,
+				D429C52B15E8AAD3002F9A4C /* RXBufferEnumerator.h */,
+				D429C52C15E8AAD3002F9A4C /* RXBufferEnumerator.m */,
 				D429C50315E8A015002F9A4C /* RXLazyEnumerations.h */,
-				D429C50415E8A015002F9A4C /* RXLazyEnumerations.m */,
 				D429C50115E8A015002F9A4C /* Supporting Files */,
 			);
 			path = RXLazyEnumerations;
@@ -125,9 +133,8 @@
 		D429C51215E8A015002F9A4C /* RXLazyEnumerationsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D429C51815E8A015002F9A4C /* RXLazyEnumerationsTests.h */,
-				D429C51915E8A015002F9A4C /* RXLazyEnumerationsTests.m */,
 				D429C51315E8A015002F9A4C /* Supporting Files */,
+				D429C52F15E8B279002F9A4C /* RXBufferEnumeratorTest.m */,
 			);
 			path = RXLazyEnumerationsTests;
 			sourceTree = "<group>";
@@ -148,6 +155,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D429C52515E8A167002F9A4C /* RXBlockEnumerator.h in Headers */,
+				D429C52D15E8AAD3002F9A4C /* RXBufferEnumerator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D429C50515E8A015002F9A4C /* RXLazyEnumerations.m in Sources */,
+				D429C52615E8A167002F9A4C /* RXBlockEnumerator.m in Sources */,
+				D429C52E15E8AAD3002F9A4C /* RXBufferEnumerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D429C51A15E8A015002F9A4C /* RXLazyEnumerationsTests.m in Sources */,
+				D429C53015E8B279002F9A4C /* RXBufferEnumeratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
