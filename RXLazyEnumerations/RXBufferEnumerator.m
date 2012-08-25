@@ -23,6 +23,8 @@
 		_dataAvailableSemaphore = dispatch_semaphore_create(0);
 		
 		dispatch_io_read(_channel, 0, SIZE_MAX, _readQueue, ^(bool done, dispatch_data_t data, int error) {
+			bool hadDataToProcess = self.hasDataToProcess;
+			
 			dispatch_data_apply(data, ^bool(dispatch_data_t region, size_t offset, const void *buffer, size_t size) {
 				NSString *chunk = [[NSString alloc] initWithBytesNoCopy:(void *)buffer length:size encoding:NSUTF8StringEncoding freeWhenDone:NO];
 				
@@ -31,7 +33,8 @@
 				return true;
 			});
 			
-			dispatch_semaphore_signal(_dataAvailableSemaphore);
+			if (!hadDataToProcess)
+				dispatch_semaphore_signal(_dataAvailableSemaphore);
 			
 			if (done) {
 				dispatch_io_close(_channel, 0);
@@ -43,20 +46,25 @@
 }
 
 
+-(bool)hasDataToProcess {
+	return _currentIndex < _contents.length;
+}
+
+
 -(id)nextObject {
 	__block id character = nil;
 	
 	__block bool shouldWait = NO;
 	
 	dispatch_sync(_readQueue, ^{
-		shouldWait = (_currentIndex == _contents.length) && !_isComplete;
+		shouldWait = !self.hasDataToProcess && !_isComplete;
 	});
 	
 	if (shouldWait)
 		dispatch_semaphore_wait(_dataAvailableSemaphore, DISPATCH_TIME_FOREVER);
 	
 	dispatch_sync(_readQueue, ^{
-		if (_currentIndex < _contents.length) {
+		if (self.hasDataToProcess) {
 			character = [_contents substringWithRange:NSMakeRange(_currentIndex++, 1)];
 		} else if (!_isComplete) {
 			// should never get here, because if we’ve consumed all the data and we’re not waiting, we’re done
